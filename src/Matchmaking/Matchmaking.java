@@ -21,22 +21,22 @@ public class Matchmaking {
         // Initialize people list
         parseFile(filePath);
 
-
         int index = 0;
-
         for (Person p : people) {
             // Get list of current person's preferred gender
-            String preferredGender = p.getPreferredGender();
             List<Person> potentialMatchesList = people.stream()
                     .filter(person -> person.getGender().
-                            equals(preferredGender)).collect(Collectors.toList());
+                            equals(p.getPreferredGender())).collect(Collectors.toList());
 
             // Increment current match score for each mutual feature & preferred feature respectively
             for (Person potentialPerson : potentialMatchesList) {
+                // Validate if current person is not potential person
                 if (!p.getFullName().equals(potentialPerson.getFullName())
+                        // Validate if potential person's preferred gender is current person's gender
                         && potentialPerson.getPreferredGender().equals(p.getGender())) {
                     matches.add(index, new Match());
 
+                    // Match score calculation
                     if (p.getPreferredDominantFeature().equals(potentialPerson.getDominantFeature()))
                         matches.get(index).incrementScore();
                     if (p.getPreferredProfession().equals(potentialPerson.getProfession()))

@@ -92,7 +92,7 @@ public class MovieDB {
 
     // Connect to poster's URL on TMDB using poster's key
     // Create directory C:\temp if not exists
-    // Download the poster to C:\temp & rename to movie title
+    // Download the poster to C:\temp if not exists & rename to movie title
     private static void downloadPoster(String moviePosterKey, String movieTitle) throws MalformedURLException {
         URL posterURL = new URL("https://image.tmdb.org/t/p/w185/" + moviePosterKey);
         File directory = new File("C:/temp");
