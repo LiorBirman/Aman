@@ -71,7 +71,6 @@ public class Matchmaking {
         String line = null;
         Scanner scanner = null;
 
-        // Read line by line
         while ((line = reader.readLine()) != null) {
             scanner = new Scanner(line);
             scanner.useDelimiter(",");
