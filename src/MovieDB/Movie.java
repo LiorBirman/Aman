@@ -8,11 +8,6 @@ public class Movie implements Comparable<Movie> {
     public Movie() {
 
     }
-    public Movie(String title, double popularity, String posterPath) {
-        this.title = title;
-        this.popularity = popularity;
-        this.posterPath = posterPath;
-    }
 
     public String getTitle() {
         return title;

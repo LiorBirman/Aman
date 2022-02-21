@@ -15,6 +15,8 @@ public class Matchmaking {
         matches = new ArrayList<>();
     }
 
+    // Parse the csv file into a List
+    // For each person, calculate match score per potential match
     public void matchMake(String filePath) throws Exception {
         // Initialize people list
         parseFile(filePath);
@@ -34,6 +36,7 @@ public class Matchmaking {
                 if (!p.getFullName().equals(potentialPerson.getFullName())
                         && potentialPerson.getPreferredGender().equals(p.getGender())) {
                     matches.add(index, new Match());
+
                     if (p.getPreferredDominantFeature().equals(potentialPerson.getDominantFeature()))
                         matches.get(index).incrementScore();
                     if (p.getPreferredProfession().equals(potentialPerson.getProfession()))
@@ -52,6 +55,7 @@ public class Matchmaking {
 
     }
 
+    // Print all stores matches sorted in ascending order by score
     private void printMatches() {
         System.out.println(matches.stream()
                 .sorted(Comparator.comparing(Match::getScore).reversed())
@@ -59,6 +63,7 @@ public class Matchmaking {
     }
 
     // This method assumes the input is correct
+    // Read CSV & store in a list
     private void parseFile(String filePath) throws Exception {
         // Read CSV file from 'src' folder
         BufferedReader reader = new BufferedReader(new FileReader(
@@ -80,12 +85,20 @@ public class Matchmaking {
         }
     }
 
+    // Parse a line of features
+    // Store the correct type (male or female) into a list with the parsed features
     private void addPerson(String line) {
         String[] personFeatures = line.split(" ");
         String gender = "";
         String fullName = "";
         int index = 0;
 
+        // index variable will be incremented for each word in full name (supports more than two words names)
+        // After incrementing, index will hold the first position of non name or gender features
+        // Features format after index:
+        // String[] features = {
+        // age, profession, dominantFeature, preferredGender, preferredMaxAge,
+        // preferredProfession, preferredDominantFeature}
         for (String feature : personFeatures) {
             index++;
             if ((feature.equals("male") || feature.equals("female")) && gender.equals("")) {
@@ -97,6 +110,7 @@ public class Matchmaking {
                 fullName += feature + " ";
         }
 
+        // Create & store the correct object type to list
         if (gender.equals("male")) {
             Male male = new Male();
             male.setFullName(fullName);
