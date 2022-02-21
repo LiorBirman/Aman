@@ -1,3 +1,5 @@
+package MovieDB;
+
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -31,7 +33,7 @@ public class MovieDB {
         System.out.print("\nEnter desired movie's ID or enter \'0\' to stop: ");
 
         // Get ID from user
-        // Create Movie object
+        // Create MovieDB.Movie object
         // Download & rename movie poster
         while ((movieID = sc.nextInt())!= 0) {
             Movie currentMovie = createMovie(movieID);
@@ -48,7 +50,7 @@ public class MovieDB {
     // Connect to TMDB using API key
     // Request movie text by ID
     // Parse movie text to variables
-    // Return Movie object
+    // Return MovieDB.Movie object
     private static Movie createMovie(int movieID) throws IOException {
         String fullURL = BASE_URL + movieID + "?api_key=" + API_KEY;
         URL url = new URL(fullURL);

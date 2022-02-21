@@ -1,3 +1,5 @@
+package MovieDB;
+
 public class Movie implements Comparable<Movie> {
     private String title;
     private double popularity;
@@ -59,7 +61,7 @@ public class Movie implements Comparable<Movie> {
 
 
 
-//public class Movie {
+//public class MovieDB.Movie {
 //    private String title;
 //    private String posterURL;
 //

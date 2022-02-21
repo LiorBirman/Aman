@@ -1,3 +1,5 @@
+import MovieDB.MovieDB;
+
 import java.io.IOException;
 
 public class MovieDBMain {

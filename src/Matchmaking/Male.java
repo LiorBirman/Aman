@@ -1,3 +1,5 @@
+package Matchmaking;
+
 public class Male extends Person {
     private int height; // In CM
 
@@ -15,7 +17,7 @@ public class Male extends Person {
 
     @Override
     public String toString() {
-        return "Male{" +
+        return "Matchmaking.Male{" +
                 ", fullName='" + getFullName() + '\'' +
                 ", age=" + getAge() +
                 ", profession='" + getProfession() + '\'' +

@@ -1,3 +1,5 @@
+package Matchmaking;
+
 public class Match {
     private String name_1;
     private String name_2;
@@ -37,6 +39,6 @@ public class Match {
 
     @Override
     public String toString() {
-        return "Match: " + name_1 + "& " + name_2 + ", score = " + score + "\n";
+        return "Matchmaking.Match: " + name_1 + "& " + name_2 + ", score = " + score + "\n";
     }
 }

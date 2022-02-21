@@ -1,3 +1,5 @@
+package Matchmaking;
+
 public class Female extends Person {
     private String hairColor;
 
@@ -15,7 +17,7 @@ public class Female extends Person {
 
     @Override
     public String toString() {
-        return "Female{" +
+        return "Matchmaking.Female{" +
                 ", fullName='" + getFullName() + '\'' +
                 ", age=" + getAge() +
                 ", profession='" + getProfession() + '\'' +
