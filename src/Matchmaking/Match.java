@@ -39,6 +39,6 @@ public class Match {
 
     @Override
     public String toString() {
-        return "Matchmaking.Match: " + name_1 + "& " + name_2 + ", score = " + score + "\n";
+        return "Match: " + name_1 + "& " + name_2 + ", score = " + score + "\n";
     }
 }

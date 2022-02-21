@@ -6,8 +6,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Matchmaking {
-    private ArrayList<Person> people;
-    private ArrayList<Match> matches ;
+    private List<Person> people;
+    private List<Match> matches ;
 
 
     public Matchmaking() {

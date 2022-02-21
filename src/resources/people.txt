@@ -1,7 +1,7 @@
-Yaara Ben Shitrit, female, 28, student, intelligent, male, 30, programmer, smart, black
-Lior Birman, male, 29, programmer, optimistic, female, 30, none, intelligent, 180
-Matchmaking.Female Matchmaking.Person, female, 25, student, smart, male, 30, student, intelligent, blonde
-Matchmaking.Male Matchmaking.Person, male, 27, programmer, intelligent, male, 35, programmer, optimistic, 200
-FEMALE PERSON, female, 30, p, s, male, 40, p, o, b
-MALE PERSON, male, 20, f, s, female, 50, programmer, smart, 300
-MALE MALE MALE PERSON PERSON, male, 1, f, s, female, 60, d, d, 200
+Yaara Ben, female, 28, student, intelligent, male, 30, programmer, funny, black
+Lior Birman, male, 29, programmer, funny, female, 30, student, intelligent, 180
+Hila Bus, female, 25, student, drama_queen, male, 30, student, intelligent, blonde
+Avi Itz, male, 27, programmer, intelligent, male, 35, programmer, optimistic, 200
+Lilach Shir, female, 30, p, s, male, 40, p, o, b
+Jimmy Page, male, 20, f, s, female, 50, programmer, smart, 300
+Ed Sa, male, 1, f, s, male, 60, d, d, 200

@@ -16,6 +16,7 @@ public class Female extends Person {
     }
 
     @Override
+    // Used for debugging
     public String toString() {
         return "Matchmaking.Female{" +
                 ", fullName='" + getFullName() + '\'' +
