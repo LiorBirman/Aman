@@ -55,14 +55,14 @@ public class Matchmaking {
 
     }
 
-    // Print all stores matches sorted in ascending order by score
+    // Print all stored matches sorted in ascending order by score
     private void printMatches() {
         System.out.println(matches.stream()
                 .sorted(Comparator.comparing(Match::getScore).reversed())
                 .collect(Collectors.toList()).toString());
     }
 
-    // This method assumes the input is correct
+    // This method assumes the input is correct \\
     // Read CSV & store in a list
     private void parseFile(String filePath) throws Exception {
         // Read CSV file from 'src' folder
