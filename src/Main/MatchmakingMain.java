@@ -1,3 +1,5 @@
+package Main;
+
 import Matchmaking.Matchmaking;
 
 public class MatchmakingMain {

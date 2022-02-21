@@ -1,3 +1,5 @@
+package Main;
+
 import MovieDB.MovieDB;
 
 import java.io.IOException;
