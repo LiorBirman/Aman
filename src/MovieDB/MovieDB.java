@@ -9,16 +9,15 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class MovieDB {
 
     private static final String API_KEY = "f1a4f22a8f558c9215ae3f85d69e4132";
     private static final String BASE_URL = "http://api.themoviedb.org/3/movie/";
-    private static final String BASE_POSTER_PATH = "poster_path\":\"";
-    private static final String BASE_TITLE_PATH = "original_title\":\"";
-    private static final String BASE_POPULARITY_PATH = "popularity\":";
+    private static final String POSTER_PREFIX = "poster_path\":\"";
+    private static final String TITLE_PREFIX = "original_title\":\"";
+    private static final String POPULARITY_PREFIX = "popularity\":";
 
     public void getMovies() throws IOException {
 
@@ -65,24 +64,24 @@ public class MovieDB {
         while ((inputLine = bufferedReader.readLine()) != null) {
 
             // Parse poster path
-            String posterBASE = inputLine.substring(inputLine.indexOf(
-                    BASE_POSTER_PATH) + BASE_POSTER_PATH.length()); // Base URL of poster path
-            String posterURL = posterBASE.substring(0, posterBASE.indexOf("\",\"")); // Full URL of poster path
+            String posterStartingString = inputLine.substring(inputLine.indexOf(
+                    POSTER_PREFIX) + POSTER_PREFIX.length());
+            String posterURL = posterStartingString.substring(0, posterStartingString.indexOf("\",\""));
 
 
             // Parse title path
-            String baseTitle = inputLine.substring(inputLine.indexOf(
-                    BASE_TITLE_PATH) + BASE_TITLE_PATH.length()); // Base URL of title path
-            String titleURL = baseTitle.substring(0, baseTitle.indexOf("\",\"")); // Full URL of poster path
+            String titleStartingString = inputLine.substring(inputLine.indexOf(
+                    TITLE_PREFIX) + TITLE_PREFIX.length());
+            String titleURL = titleStartingString.substring(0, titleStartingString.indexOf("\",\""));
 
             // Parse popularity path
-            String popBase = inputLine.substring(inputLine.indexOf(
-                    BASE_POPULARITY_PATH) + BASE_POPULARITY_PATH.length()); // Base URL of popularity path
-            String popURL = popBase.substring(0, popBase.indexOf(",\"")); // Full URL of popularity path
+            String popularityStartingString = inputLine.substring(inputLine.indexOf(
+                    POPULARITY_PREFIX) + POPULARITY_PREFIX.length());
+            String popularityURL = popularityStartingString.substring(0, popularityStartingString.indexOf(",\""));
 
             // Set movie all features from parsed text
             currentMovie.setTitle(titleURL);
-            currentMovie.setPopularity(Double.parseDouble(popURL));
+            currentMovie.setPopularity(Double.parseDouble(popularityURL));
             currentMovie.setPosterPath(posterURL);
 
         }
@@ -91,7 +90,6 @@ public class MovieDB {
         return currentMovie;
     }
 
-    /* This function is used to download the poster image of the movie */
     // Connect to poster's URL on TMDB using poster's key
     // Create directory C:\temp if not exists
     // Download the poster to C:\temp & rename to movie title
