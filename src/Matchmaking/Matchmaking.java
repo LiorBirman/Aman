@@ -110,7 +110,12 @@ public class Matchmaking {
                 fullName += feature + " ";
         }
 
-        // Create & store the correct object type to list
+        index = storePerson(gender, fullName, personFeatures, index);
+
+    }
+
+    // Create & store the correct object type to list
+    private int storePerson(String gender, String fullName, String[] personFeatures, int index) {
         if (gender.equals("male")) {
             Male male = new Male();
             male.setFullName(fullName);
@@ -125,6 +130,7 @@ public class Matchmaking {
 
             people.add(male);
         }
+
         else {
             Female female = new Female();
             female.setFullName(fullName);
@@ -140,5 +146,6 @@ public class Matchmaking {
             people.add(female);
         }
 
+        return index;
     }
 }
